@@ -32,6 +32,12 @@ function runApp() {
             newsView.Page = 1;
             uploadNews(source);
         });
-        newsView.onPageChange(page => uploadNews(newsView.CurrentSource, page));
+        newsView.onPageChange(page => {
+            if (page <= 0) {
+                return;
+            }
+
+            uploadNews(newsView.CurrentSource, page);
+        });
     }
 }

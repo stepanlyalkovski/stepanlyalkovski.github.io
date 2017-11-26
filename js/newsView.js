@@ -3,8 +3,8 @@ const articleMarkup = `
         <header>
             <h1 class="news-title"></h1>
         </header>
-        <section>
-            <img class="news-image" alt="News image">
+        <section class="news-content">
+            <img class="news-image">
             <p class="news-description"></p>
             <a target="_blank" class="news-url">Read more</a>
         </section>
