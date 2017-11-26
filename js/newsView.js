@@ -55,8 +55,8 @@ class NewsView {
         }
     }
 
-    builtArticle(article) {
-        let publishedDate = new Date(article.publishedAt)
+    buildArticle(article) {
+        let publishedDate = new Date(article.publishedAt);
         let domParser = new DOMParser();
         let articleElement = domParser.parseFromString(articleMarkup, 'text/html').querySelector('.news-article');
 
@@ -64,7 +64,7 @@ class NewsView {
         NewsView.setElementValue(articleElement, '.news-description', article.description);
         NewsView.setElementValue(articleElement, '.news-author', article.author);
         NewsView.setElementValue(articleElement, '.news-publish-date', publishedDate.toLocaleDateString());
-        
+
         NewsView.setElementAttribute(articleElement, 'img', 'src', article.urlToImage);
         NewsView.setElementAttribute(articleElement, '.news-url', 'href', article.url);
         NewsView.setElementAttribute(articleElement, '.news-publish-date', 'datetime', article.publishedAt);
@@ -72,14 +72,22 @@ class NewsView {
         this._newsContainerElement.appendChild(articleElement);
     }
 
-    builtArticles(articles) {
+    buildArticles(articles) {
         for(let article of articles) {
-            this.builtArticle(article);
+            this.buildArticle(article);
         }
     }
 
     clearNews() {
         this._newsContainerElement.innerHTML = '';
+    }
+
+    printError(errorMessage) {
+        let errorElement = document.createElement("p");
+        errorElement.classList.add('error');
+        errorElement.innerHTML = `Something went wrong. ${errorMessage}.`;
+        this._newsContainerElement.prepend(errorElement);
+        setTimeout(() => errorElement.remove(), 10000);
     }
 
     static setElementValue(baseElement, selector, value) {
@@ -93,6 +101,6 @@ class NewsView {
         }
 
         let element = baseElement.querySelector(selector);
-        element.setAttribute(attribute, value); 
+        element.setAttribute(attribute, value);
     }
 }

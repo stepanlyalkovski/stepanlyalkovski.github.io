@@ -29,6 +29,9 @@ main {
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
+
+    animation-name: news-article-added;
+    animation-duration: 0.7s;
 }
 
 .news-article:hover {
@@ -70,6 +73,16 @@ main {
     box-shadow: initial;
 }
 
+.error {
+    color: red;
+    font-size: 16px;
+}
+
+@keyframes news-article-added {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
 @media screen and (max-width: 600px) {
     main {
         margin: 5px 10px;
@@ -89,7 +102,7 @@ main {
     }
 
     .news-image {
-        width: 60%;
+        width: 95%;
         height: auto;
         margin: 10px auto;
         border-radius: 2px;
@@ -99,3 +112,4 @@ main {
         font-size: 26px;
     }
 }
+
