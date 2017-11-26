@@ -4,8 +4,7 @@ body {
 }
 
 main {
-    max-width: 1800px;
-    margin: 5px auto;
+    margin: 5px 25px;
 }
 
 .copyright {
@@ -72,6 +71,10 @@ main {
 }
 
 @media screen and (max-width: 600px) {
+    main {
+        margin: 5px 10px;
+    }
+    
     #news-container {
         margin-top: 0;
     }
