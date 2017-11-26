@@ -4,7 +4,7 @@ body {
 }
 
 main {
-    width: 1800px;
+    max-width: 1800px;
     margin: 5px auto;
 }
 
@@ -20,8 +20,10 @@ main {
 
 .news-article {
     width: 575px;
-    margin-right: 25px;
+    margin-right: auto;
+    margin-left: auto;
     margin-bottom: 50px;
+
     padding: 20px 25px;
     font-size: 16px;
     border: 1px solid rgba(0,0,0,0.1);
@@ -67,4 +69,30 @@ main {
 .form-control:focus {
     border-color: #ced4da;
     box-shadow: initial;
+}
+
+@media screen and (max-width: 600px) {
+    #news-container {
+        margin-top: 0;
+    }
+
+    .news-article {
+        width: 98%;
+        margin-bottom: 15px;
+
+        padding: 10px 15px;
+        font-size: 18px;
+        border-radius: 2px;
+    }
+
+    .news-image {
+        width: 60%;
+        height: auto;
+        margin: 10px auto;
+        border-radius: 2px;
+    }
+
+    .news-title {
+        font-size: 26px;
+    }
 }
