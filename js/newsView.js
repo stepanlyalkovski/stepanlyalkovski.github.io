@@ -86,8 +86,8 @@ class NewsView {
         let errorElement = document.createElement("p");
         errorElement.classList.add('error');
         errorElement.innerHTML = `Something went wrong. ${errorMessage}.`;
-        this._newsContainerElement.prepend(errorElement);
-        setTimeout(() => errorElement.remove(), 10000);
+        this._newsContainerElement.appendChild(errorElement);
+        setTimeout(() => this._newsContainerElement.removeChild(errorElement), 10000);
     }
 
     static setElementValue(baseElement, selector, value) {

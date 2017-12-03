@@ -1,0 +1,28 @@
+{
+  "name": "stepanlyalkovski.github.io",
+  "version": "1.0.0",
+  "description": "frontcamp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx babel js --out-file dist/app.js --source-maps"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stepanlyalkovski/stepanlyalkovski.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stepanlyalkovski/stepanlyalkovski.github.io/issues"
+  },
+  "homepage": "https://github.com/stepanlyalkovski/stepanlyalkovski.github.io#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "whatwg-fetch": "^2.0.3"
+  }
+}
