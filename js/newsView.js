@@ -18,6 +18,7 @@ const articleMarkup = `
 
 class NewsView {
     constructor() {
+        console.log('Initialize DOM elements...');
         this._sourceSelectControl = document.querySelector('#newsSources');
         this._newsContainerElement = document.querySelector('#news-container');
         this._pageInputControl = document.querySelector('#page-control');

@@ -18,6 +18,7 @@ class NewsService {
     }
 
     static handleErrors(response) {
+        console.log('checking http response status...');
         if (!response.ok) {
             throw Error(response.statusText);
         }

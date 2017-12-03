@@ -29,6 +29,7 @@ function runApp() {
             newsView.clearNews();
             newsView.buildArticles(articles);
         }).catch(function (error) {
+            console.error('Oops. Error');
             newsView.clearNews();
             newsView.printError(error);
         });
