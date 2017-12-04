@@ -16,3 +16,10 @@ Used ES6 features:
 - Default values in function arguments;
 - Destructuring;
 - Number.isInteger;
+
+
+FrontCamp Task 2
+- Babel es2015 preset and polyfill
+- Fetch polyfill
+- IE 10 support
+- console.log remove babel plugin
