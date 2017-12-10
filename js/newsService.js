@@ -26,3 +26,5 @@ class NewsService {
         return response;
     }
 }
+
+export { NewsService }

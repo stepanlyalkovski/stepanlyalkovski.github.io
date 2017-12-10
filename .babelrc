@@ -1,4 +1,5 @@
 {
     "presets": ["es2015"],
-    "plugins": ["./plugins/console-log-remove.js"]
+    "plugins": ["syntax-dynamic-import"]
+//    "plugins": ["./plugins/console-log-remove.js"]
 }

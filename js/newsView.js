@@ -105,3 +105,5 @@ class NewsView {
         element.setAttribute(attribute, value);
     }
 }
+
+export { NewsView }

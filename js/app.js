@@ -1,6 +1,8 @@
-document.addEventListener("DOMContentLoaded", runApp);
+import { NewsView } from './newsView';
+import { NewsService } from './newsService';
+// import '../css/style.scss'
 
-function runApp() {
+export default function runApp() {
     console.log('App has started');
     const config = {
         apiKey: '8578cf6cf7104f77a2b30b8259c14ea6',
