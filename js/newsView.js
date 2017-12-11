@@ -1,20 +1,4 @@
-const articleMarkup = `
-    <article class="news-article">
-        <header>
-            <h1 class="news-title"></h1>
-        </header>
-        <section class="news-content">
-            <img class="news-image">
-            <p class="news-description"></p>
-            <a target="_blank" class="news-url">Read more</a>
-        </section>
-        <footer>
-            Published on
-            <time class="news-publish-date"></time>
-            by <span class="news-author"></span>.
-        </footer>
-    </article>
-`.trim();
+import articleMarkup from './templates/article-template.html';
 
 class NewsView {
     constructor() {

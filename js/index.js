@@ -9,6 +9,7 @@ function runApp() {
     function showNewsClick() {
         showNewsBtn.removeEventListener('click', showNewsClick);
         loadAppModule();
+        setTimeout(() => showNewsBtn.parentNode.removeChild(showNewsBtn), 4000);
     }
 
     function loadAppModule() {

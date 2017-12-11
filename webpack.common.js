@@ -10,7 +10,6 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-            hash: true,
             title: 'News App',
             myPageHeader: 'News Application',
             template: './index.html',
@@ -34,6 +33,13 @@ module.exports = {
                 }, {
                     loader: "sass-loader"
                 }]
+            },
+            {
+                test: /\.html/,
+                use: 'raw-loader',
+                exclude: [
+                    path.resolve(__dirname, './index.html'),
+                ]
             }
         ]
     }
