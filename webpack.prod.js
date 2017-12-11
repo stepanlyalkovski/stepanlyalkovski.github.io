@@ -4,6 +4,6 @@
 
     module.exports = merge(common, {
       plugins: [
-        // new UglifyJSPlugin()
+         new UglifyJSPlugin()
       ]
  });

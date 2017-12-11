@@ -1,13 +1,21 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
         index: ["babel-polyfill", 'whatwg-fetch', './js/index.js']
     },
     plugins: [
-        // new CleanWebpackPlugin(['dist'])
+        new CleanWebpackPlugin(['dist']),
+        new HtmlWebpackPlugin({
+            hash: true,
+            title: 'News App',
+            myPageHeader: 'News Application',
+            template: './index.html',
+            filename: './index.html'
+        })
     ],
     output: {
         filename: '[name].bundle.js',

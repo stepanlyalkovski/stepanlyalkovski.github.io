@@ -1,6 +1,6 @@
 import { NewsView } from './newsView';
 import { NewsService } from './newsService';
-// import '../css/style.scss'
+import '../css/style.scss'
 
 export default function runApp() {
     console.log('App has started');

@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News</title>
+    <title><%= htmlWebpackPlugin.options.title %></title>
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-
-    <script src="index.bundle.js"></script>
 </head>
 <body>
 
@@ -28,7 +26,7 @@
         </div>
     </nav>
     <main>
-        <h1>News application</h1>
+        <h1><%= htmlWebpackPlugin.options.myPageHeader %></h1>
         <div class="row">
             <div class="col-lg-4">
                 <div class="form-group">
