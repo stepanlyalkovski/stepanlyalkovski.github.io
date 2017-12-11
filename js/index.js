@@ -1,4 +1,5 @@
 import 'bootstrap/scss/bootstrap.scss';
+
 document.addEventListener("DOMContentLoaded", runApp);
 
 function runApp() {
