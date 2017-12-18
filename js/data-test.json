@@ -1,0 +1,16 @@
+{
+  "article": {
+    "title": "test",
+    "page": "2",
+    "5": "five",
+    "6": "six",
+    "year": "2015",
+    "complex": {
+      "someArray": [1, 2, {"1":"removeThis", "a":"doNotRemoveThis"}, 4],
+      "someObj": {
+        "55":"anotherThingToRemove",
+        "name":"simpleStringProperty"
+      }
+    }
+  }
+}

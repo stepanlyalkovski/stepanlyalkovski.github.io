@@ -1,8 +1,10 @@
 import 'bootstrap/scss/bootstrap.scss';
+import someJsonData from './data-test.json'
 
 document.addEventListener("DOMContentLoaded", runApp);
 
 function runApp() {
+    console.log(someJsonData);
     let showNewsBtn = document.querySelector('#show-news');
     showNewsBtn.addEventListener("click", showNewsClick);
 

@@ -21,8 +21,23 @@ module.exports = {
         chunkFilename: '[name].bundle.js',
         path: path.resolve(__dirname, './dist')
     },
+    resolveLoader: {
+        modules: [
+            'node_modules',
+            path.resolve(__dirname, 'loaders')
+        ]
+    },
     module: {
         rules: [
+            {
+                test: /\.json$/,
+                use: [
+                    'json-loader',
+                    {
+                        loader: path.resolve('loaders/test.js')
+                    }
+                ]
+            },
             { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
             {
                 test: /\.scss$/,
