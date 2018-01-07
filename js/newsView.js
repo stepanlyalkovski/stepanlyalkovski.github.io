@@ -1,4 +1,5 @@
 import articleMarkup from './templates/article-template.html';
+import EventObserver from './EventObservable';
 
 class NewsView {
     constructor() {
@@ -6,6 +7,12 @@ class NewsView {
         this._sourceSelectControl = document.querySelector('#newsSources');
         this._newsContainerElement = document.querySelector('#news-container');
         this._pageInputControl = document.querySelector('#page-control');
+        this._sourceChangeObservable = new EventObserver();
+        this._pageChangeObservable = new EventObserver();
+
+
+        this._sourceSelectControl.addEventListener('change', event => this._sourceChangeObservable.broadcast(event.target.value));
+        this._pageInputControl.addEventListener('change', event => this._pageChangeObservable.broadcast(event.target.value));
     }
 
     get Page() {
@@ -25,11 +32,11 @@ class NewsView {
     }
 
     onSourceChange(callback) {
-        this._sourceSelectControl.addEventListener('change', event => callback(event.target.value));
+        this._sourceChangeObservable.subscribe(callback);
     }
 
     onPageChange(callback) {
-        this._pageInputControl.addEventListener('change', event => callback(event.target.value));
+        this._pageChangeObservable.subscribe(callback);
     }
 
     addSources(sources) {
