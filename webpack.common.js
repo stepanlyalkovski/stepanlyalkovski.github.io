@@ -22,10 +22,9 @@ module.exports = {
         path: path.resolve(__dirname, './dist')
     },
     resolveLoader: {
-        modules: [
-            'node_modules',
-            path.resolve(__dirname, 'loaders')
-        ]
+        alias: {
+            'custom-json-loader': path.join(__dirname, 'loaders', 'custom-json-loader.js')
+        }
     },
     module: {
         rules: [
@@ -33,9 +32,7 @@ module.exports = {
                 test: /\.json$/,
                 use: [
                     'json-loader',
-                    {
-                        loader: path.resolve('loaders/test.js')
-                    }
+                    'custom-json-loader'
                 ]
             },
             { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
