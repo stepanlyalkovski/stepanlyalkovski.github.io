@@ -23,3 +23,12 @@ FrontCamp Task 2
 - Fetch polyfill
 - IE 10 support
 - console.log remove babel plugin
+
+FrontCamp Patterns task
+- MVP architectural pattern
+- Prototype (articleView, Observable)
+- Proxy (newsServiceProxy)
+- Mediator (kind of, in app.js)
+- Observer (events in newsView, articleList)
+- Decorator(viewDecorator)
+- Factory (articleViewFactory)
