@@ -1,5 +1,5 @@
 {
     "presets": ["es2015"],
-    "plugins": ["syntax-dynamic-import"]
+    "plugins": ["syntax-dynamic-import", "transform-decorators-legacy"]
 //    "plugins": ["./plugins/console-log-remove.js"]
 }

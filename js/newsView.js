@@ -1,6 +1,8 @@
 import articleMarkup from './templates/article-template.html';
 import EventObserver from './EventObservable';
+import View from './ViewDecorator';
 
+@View
 class NewsView {
     constructor() {
         console.log('Initialize DOM elements...');
@@ -81,20 +83,6 @@ class NewsView {
         this._newsContainerElement.appendChild(errorElement);
         setTimeout(() => this._newsContainerElement.removeChild(errorElement), 10000);
     }
-
-    static setElementValue(baseElement, selector, value) {
-        let element = baseElement.querySelector(selector);
-        element.innerHTML = value;
-    }
-
-    static setElementAttribute(baseElement, selector, attribute, value) {
-        if (value == null) {
-            return;
-        }
-
-        let element = baseElement.querySelector(selector);
-        element.setAttribute(attribute, value);
-    }
 }
 
-export { NewsView }
+export default NewsView;

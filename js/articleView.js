@@ -1,38 +1,46 @@
 import articleTemplate from './templates/article-template.html';
+import View from './ViewDecorator';
 
-class articleView {
-   constructor(article) {
+@View
+class ArticleView {
+   constructor() {
         this.view = this.parseArticleTemplate(this.articleTemplate);
-        // addElementValues();
-        //
-        // function addElementValues() {
-        //     let publishedDate = new Date(article.publishedAt);
-        //
-        //     NewsView.setElementValue(articleElement, this.articleElements.title, article.title);
-        //     NewsView.setElementValue(articleElement, this.articleElements.description, article.description);
-        //     NewsView.setElementValue(articleElement, this.articleElements.author, article.author);
-        //     NewsView.setElementValue(articleElement, this.articleElements.publishDate, publishedDate.toLocaleDateString());
-        // }
-        //
-        // function addAttributes() {
-        //     NewsView.setElementAttribute(articleElement, this.articleElements.image, 'src', article.urlToImage);
-        //     NewsView.setElementAttribute(articleElement, this.articleElements.sourceUrl, 'href', article.url);
-        //     NewsView.setElementAttribute(articleElement, this.articleElements.publishDate, 'datetime', article.publishedAt);
-        //
-        //
-        // }
    }
 
+   setTitle(title) {
+       ArticleView.setElementValue(this.view, this.articleElements.title, title);
+   }
 
+   setImage(imageUrl) {
+       ArticleView.setElementAttribute(this.view, this.articleElements.image, 'src', imageUrl);
+   }
+
+   setDescription(text) {
+       ArticleView.setElementValue(this.view, this.articleElements.description, text);
+   }
+
+   setAuthor(author) {
+       ArticleView.setElementValue(this.view, this.articleElements.author, author);
+   }
+
+   setPublishDate(publishDate, localDate) {
+       ArticleView.setElementValue(this.view, this.articleElements.publishDate, localDate);
+       ArticleView.setElementAttribute(this.view, this.articleElements.publishDate, 'datetime', publishDate);
+   }
+
+   setSource(sourceUrl) {
+       ArticleView.setElementAttribute(this.view, this.articleElements.sourceUrl, 'href', sourceUrl)
+   }
 }
-articleView.prototype.articleTemplate = articleTemplate;
 
-articleView.prototype.parseArticleTemplate = function (markup) {
+ArticleView.prototype.articleTemplate = articleTemplate;
+
+ArticleView.prototype.parseArticleTemplate = function (markup) {
     let domParser = new DOMParser();
     return domParser.parseFromString(markup, 'text/html').querySelector('.news-article');
 };
 
-articleView.prototype.articleElements = {
+ArticleView.prototype.articleElements = {
     title: '.news-title',
     image: 'img',
     description: '.news-description',
@@ -40,3 +48,5 @@ articleView.prototype.articleElements = {
     publishDate: '.news-publish-date',
     sourceUrl: '.news-url'
 };
+
+export default ArticleView;
